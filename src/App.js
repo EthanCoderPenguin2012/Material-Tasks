@@ -4,6 +4,7 @@ import AddTaskForm from './components/AddTaskForm';
 import './assets/styles/main.css';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import SettingsMenu from './components/SettingsMenu';
+import AiAssistant from './components/AiAssistant';
 
 const App = () => {
     const [tasks, setTasks] = useState([]);
@@ -35,6 +36,7 @@ const App = () => {
             <SettingsMenu onThemeChange={handleThemeChange} onFontChange={handleFontChange} />
             <AddTaskForm addTask={addTask} />
             <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
+            <AiAssistant />
         </div>
     );
 };
