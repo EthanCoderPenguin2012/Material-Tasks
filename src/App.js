@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TaskList from './components/TaskList';
 import AddTaskForm from './components/AddTaskForm';
 import './assets/styles/main.css';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App = () => {
     const [tasks, setTasks] = useState([]);
