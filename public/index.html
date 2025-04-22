@@ -39,7 +39,36 @@
             <h1>Material Tasks</h1>
         </header>
         <main>
-            <section id="task-form">
+            <section id="settings-menu">
+                <h2>Settings</h2>
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="glassmorphism">Glassmorphism</option>
+                        <option value="forest-green">Forest Green</option>
+                        <option value="ocean-blue">Ocean Blue</option>
+                        <option value="monochrome">Monochrome</option>
+                        <option value="sunset-orange">Sunset Orange</option>
+                        <option value="midnight-purple">Midnight Purple</option>
+                        <option value="sky-blue">Sky Blue</option>
+                        <option value="sand-yellow">Sand Yellow</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="font">Font</label>
+                    <select id="font">
+                        <option value="Roboto">Roboto</option>
+                        <option value="Open Sans">Open Sans</option>
+                        <option value="Lato">Lato</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Poppins">Poppins</option>
+                        <option value="Raleway">Raleway</option>
+                    </select>
+                </div>
+            </section>
+            <section id="add-task-form">
                 <h2>Add a New Task</h2>
                 <form>
                     <input type="text" id="task-name" placeholder="Task Name" required />
@@ -59,6 +88,14 @@
                 <ul>
                     <li>No tasks yet. Add a task to get started!</li>
                 </ul>
+            </section>
+            <section id="ai-assistant">
+                <h2>AI Assistant</h2>
+                <form>
+                    <textarea id="ai-input" placeholder="Ask the AI assistant..." rows="4"></textarea>
+                    <button type="submit">Ask</button>
+                </form>
+                <div id="ai-response"></div>
             </section>
         </main>
     </div>
