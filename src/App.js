@@ -22,6 +22,7 @@ const App = () => {
     return (
         <div className="app-container">
             <h1>Material Tasks</h1>
+            <SpeedInsights />
             <AddTaskForm addTask={addTask} />
             <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
         </div>
