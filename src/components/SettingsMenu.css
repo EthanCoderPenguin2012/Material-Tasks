@@ -1,0 +1,38 @@
+/* SettingsMenu.css */
+
+.settings-menu {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.settings-menu h2 {
+    font-size: 1.5rem;
+    color: #6200ea;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.settings-menu .form-group {
+    margin-bottom: 15px;
+}
+
+.settings-menu label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.settings-menu select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
