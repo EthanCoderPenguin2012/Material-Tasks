@@ -1,0 +1,33 @@
+{
+  "name": "material-tasks",
+  "version": "1.0.0",
+  "description": "A feature-rich PWA for task management with glassmorphism and Google Material Design.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "keywords": [
+    "PWA",
+    "tasks",
+    "material-design",
+    "glassmorphism"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^3.11.2",
+    "babel-loader": "^8.2.3",
+    "jest": "^27.0.6",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1"
+  }
+}
