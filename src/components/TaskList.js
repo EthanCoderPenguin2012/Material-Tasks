@@ -8,7 +8,7 @@ const TaskList = () => {
     const [ws, setWs] = useState(null);
 
     useEffect(() => {
-        const socket = new WebSocket('ws://localhost:8080');
+        const socket = new WebSocket('wss://<your-vercel-deployment-url>/api/websocket');
 
         socket.onopen = () => {
             console.log('Connected to WebSocket server');
