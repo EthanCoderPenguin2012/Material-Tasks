@@ -1,0 +1,91 @@
+/* Default Dark Mode */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Material Icons */
+.material-icons {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+/* Sunrise Theme */
+body.sunrise {
+    background-color: #FF4500;
+    color: #ffffff;
+}
+
+/* Galaxy Theme */
+body.galaxy {
+    background-color: #483D8B;
+    color: #ffffff;
+}
+
+/* Neon Theme */
+body.neon {
+    background-color: #39FF14;
+    color: #000000;
+}
+
+/* Pastel Theme */
+body.pastel {
+    background-color: #FFD1DC;
+    color: #000000;
+}
+
+/* Retro Theme */
+body.retro {
+    background-color: #FF7F50;
+    color: #000000;
+}
+
+/* Buttons */
+button {
+    background-color: #6200ea;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Form Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #6200ea;
+    outline: none;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-weight: 500;
+    margin: 16px 0;
+}

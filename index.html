@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/themes.css">
+    <title>Material Tasks</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Material Tasks</h1>
+        </header>
+        <main>
+            <section id="settings-menu">
+                <h2>Settings</h2>
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="glassmorphism">Glassmorphism</option>
+                        <option value="forest-green">Forest Green</option>
+                        <option value="ocean-blue">Ocean Blue</option>
+                        <option value="monochrome">Monochrome</option>
+                        <option value="sunset-orange">Sunset Orange</option>
+                        <option value="midnight-purple">Midnight Purple</option>
+                        <option value="sky-blue">Sky Blue</option>
+                        <option value="sand-yellow">Sand Yellow</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="font">Font</label>
+                    <select id="font">
+                        <option value="Roboto">Roboto</option>
+                        <option value="Open Sans">Open Sans</option>
+                        <option value="Lato">Lato</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Poppins">Poppins</option>
+                        <option value="Raleway">Raleway</option>
+                    </select>
+                </div>
+            </section>
+            <section id="new-themes">
+                <h2>New Themes</h2>
+                <div class="form-group">
+                    <label for="new-theme">Select a New Theme</label>
+                    <select id="new-theme">
+                        <option value="sunrise">Sunrise</option>
+                        <option value="galaxy">Galaxy</option>
+                        <option value="neon">Neon</option>
+                        <option value="pastel">Pastel</option>
+                        <option value="retro">Retro</option>
+                    </select>
+                </div>
+                <button id="apply-new-theme">Apply Theme</button>
+            </section>
+
+            <section id="advanced-settings">
+                <h2>Advanced Settings</h2>
+                <div class="form-group">
+                    <label for="auto-save">Enable Auto-Save</label>
+                    <input type="checkbox" id="auto-save" />
+                </div>
+                <div class="form-group">
+                    <label for="notifications-toggle">Enable Notifications</label>
+                    <input type="checkbox" id="notifications-toggle" />
+                </div>
+                <button id="save-settings">Save Settings</button>
+            </section>
+
+            <section id="task-categories">
+                <h2>Task Categories</h2>
+                <div class="form-group">
+                    <label for="category">Add a New Category</label>
+                    <input type="text" id="category" placeholder="Category Name" />
+                </div>
+                <button id="add-category">Add Category</button>
+                <ul id="category-list">
+                    <li>Work</li>
+                    <li>Personal</li>
+                    <li>Urgent</li>
+                </ul>
+            </section>
+            <section id="add-task-form">
+                <h2>Add a New Task</h2>
+                <form>
+                    <input type="text" id="task-name" placeholder="Task Name" required />
+                    <textarea id="task-desc" placeholder="Task Description"></textarea>
+                    <select id="task-priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                    <input type="date" id="task-due-date" />
+                    <input type="text" id="task-tags" placeholder="Tags (comma-separated)" />
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+            <section id="task-list">
+                <h2>Your Tasks</h2>
+                <ul>
+                    <li>No tasks yet. Add a task to get started!</li>
+                </ul>
+            </section>
+            <section id="ai-assistant">
+                <h2>AI Assistant</h2>
+                <form>
+                    <textarea id="ai-input" placeholder="Ask the AI assistant..." rows="4"></textarea>
+                    <button type="submit">Ask</button>
+                </form>
+                <div id="ai-response"></div>
+            </section>
+            <section id="api-usage">
+                <h2>API Usage</h2>
+                <div id="usage-stats">
+                    <p>Requests made: <span id="request-count">0</span></p>
+                </div>
+            </section>
+            <section id="task-filters">
+                <h2>Filter Tasks</h2>
+                <div class="form-group">
+                    <label for="filter-priority">Priority</label>
+                    <select id="filter-priority">
+                        <option value="all">All</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-due-date">Due Date</label>
+                    <input type="date" id="filter-due-date" />
+                </div>
+                <button id="apply-filters">Apply Filters</button>
+            </section>
+
+            <section id="task-stats">
+                <h2>Task Statistics</h2>
+                <p>Total Tasks: <span id="total-tasks">0</span></p>
+                <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+                <p>Pending Tasks: <span id="pending-tasks">0</span></p>
+            </section>
+
+            <section id="notifications">
+                <h2>Notifications</h2>
+                <p id="notification-message">No new notifications.</p>
+            </section>
+
+            <section id="user-profile">
+                <h2>User Profile</h2>
+                <p>Name: <span id="user-name">Guest</span></p>
+                <p>Email: <span id="user-email">guest@example.com</span></p>
+                <button id="edit-profile">Edit Profile</button>
+            </section>
+        </main>
+    </div>
+    <script src="../src/main.js" type="module"></script>
+    <script>
+        async function fetchUsageStats() {
+            try {
+                const res = await fetch('/usage');
+                const data = await res.json();
+                document.getElementById('request-count').textContent = data.api_usage.requests;
+            } catch (error) {
+                console.error('Error fetching usage stats:', error);
+            }
+        }
+        fetchUsageStats();
+
+        document.getElementById('apply-filters').addEventListener('click', () => {
+            const priority = document.getElementById('filter-priority').value;
+            const dueDate = document.getElementById('filter-due-date').value;
+            console.log(`Filters applied: Priority - ${priority}, Due Date - ${dueDate}`);
+        });
+
+        document.getElementById('edit-profile').addEventListener('click', () => {
+            alert('Profile editing feature coming soon!');
+        });
+
+        document.getElementById('apply-new-theme').addEventListener('click', () => {
+            const theme = document.getElementById('new-theme').value;
+            document.body.className = theme;
+            console.log(`Applied new theme: ${theme}`);
+        });
+
+        document.getElementById('save-settings').addEventListener('click', () => {
+            const autoSave = document.getElementById('auto-save').checked;
+            const notifications = document.getElementById('notifications-toggle').checked;
+            console.log(`Settings saved: Auto-Save - ${autoSave}, Notifications - ${notifications}`);
+        });
+
+        document.getElementById('add-category').addEventListener('click', () => {
+            const category = document.getElementById('category').value;
+            if (category) {
+                const categoryList = document.getElementById('category-list');
+                const newCategory = document.createElement('li');
+                newCategory.textContent = category;
+                categoryList.appendChild(newCategory);
+                document.getElementById('category').value = '';
+                console.log(`Added new category: ${category}`);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -23,6 +23,20 @@ wss.on('connection', (ws) => {
             case 'update':
                 tasks = tasks.map(task => task.id === data.task.id ? data.task : task);
                 break;
+            case 'update-theme':
+                wss.clients.forEach(client => {
+                    if (client.readyState === WebSocket.OPEN) {
+                        client.send(JSON.stringify({ type: 'theme-update', theme: data.theme }));
+                    }
+                });
+                break;
+            case 'update-settings':
+                wss.clients.forEach(client => {
+                    if (client.readyState === WebSocket.OPEN) {
+                        client.send(JSON.stringify({ type: 'settings-update', settings: data.settings }));
+                    }
+                });
+                break;
             default:
                 console.log('Unknown message type:', data.type);
         }

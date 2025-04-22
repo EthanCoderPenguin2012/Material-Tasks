@@ -35,6 +35,11 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 type: 'asset/resource',
             },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, 'assets/themes'),
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
         ],
     },
     plugins: [

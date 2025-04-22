@@ -17,5 +17,12 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "new_themes": [
+    { "name": "Sunrise", "color": "#FF4500" },
+    { "name": "Galaxy", "color": "#483D8B" },
+    { "name": "Neon", "color": "#39FF14" },
+    { "name": "Pastel", "color": "#FFD1DC" },
+    { "name": "Retro", "color": "#FF7F50" }
   ]
 }

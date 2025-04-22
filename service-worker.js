@@ -9,6 +9,11 @@ self.addEventListener('install', (event) => {
                 '/assets/images/icon-192x192.png',
                 '/assets/images/icon-512x512.png',
                 // Add other assets as needed
+                '/assets/themes/sunrise.css',
+                '/assets/themes/galaxy.css',
+                '/assets/themes/neon.css',
+                '/assets/themes/pastel.css',
+                '/assets/themes/retro.css'
             ]);
         })
     );
@@ -35,4 +40,11 @@ self.addEventListener('activate', (event) => {
             );
         })
     );
+});
+
+// Handle advanced settings updates
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'UPDATE_SETTINGS') {
+        console.log('Settings updated:', event.data.settings);
+    }
 });
